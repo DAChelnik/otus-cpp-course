@@ -12,3 +12,6 @@ I am currently studying a course "C++ Developer. Basic" in OTUS online school.
 
 Телефон для связи: +7 910 741-41-20  
 E-mail: denis@chelnik.ru
+
+## Базовый синтакс
+
