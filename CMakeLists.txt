@@ -1,24 +1,23 @@
-cmake_minimum_required(VERSION 3.15-3.18)
+cmake_minimum_required(VERSION 3.5)
 
-project(otus-edu-cpp-developer)
+project(03.homework)
 
-add_executable(CPP-HW
-    main.cpp
-    example.cpp
-    example.h
+add_executable(
+	check_value
+	check_value.cpp
 )
 
-set_target_properties(CPP-HW PROPERTIES
-  CXX_STANDARD 17
-  CXX_STANDARD_REQUIRED ON)
+add_executable(
+	random_value
+	random_value.cpp
+)
 
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
-  CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+add_executable(
+	high_scores
+	high_scores.cpp
+)
 
-    target_compile_options(CPP-HW PRIVATE -Wall -Wextra -Werror -pedantic)
-
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-
-    target_compile_options(CPP-HW PRIVATE /EHsc /W4 /WX)
-
-endif()
+add_executable(
+	argument
+	argument.cpp
+)
