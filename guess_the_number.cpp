@@ -4,6 +4,9 @@
 #include <cstdlib>
 #include <ctime>
 
+bool  write_to_file(std::string user_name, int attempts_count, std::ofstream &);
+bool read_from_file(std::ifstream &);
+
 int main() 
 {
 	const std::string high_scores_filename = "high_scores.txt";
@@ -97,4 +100,20 @@ int main()
 	system("pause");
 
 	return 0;
+}
+
+/*	Write new high score to the records table
+*/
+bool write_to_file(std::string user_name, int attempts_count, std::ofstream &file)
+{
+	
+	return true;
+}
+
+/*	Read the high score file and print all results
+ */
+bool read_from_file(std::ifstream &file)
+{
+
+	return true;
 }
