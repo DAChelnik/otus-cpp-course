@@ -1,24 +1,13 @@
-cmake_minimum_required(VERSION 3.15-3.18)
+cmake_minimum_required(VERSION 3.12)
 
-project(otus-edu-cpp-developer)
+project(CMakeExamples)
 
-add_executable(CPP-HW
-    main.cpp
-    example.cpp
-    example.h
-)
+add_subdirectory(1_basic)
+add_subdirectory(2_var_n_config)
+add_subdirectory(3_lib)
 
-set_target_properties(CPP-HW PROPERTIES
-  CXX_STANDARD 17
-  CXX_STANDARD_REQUIRED ON)
-
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
-  CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-
-    target_compile_options(CPP-HW PRIVATE -Wall -Wextra -Werror -pedantic)
-
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-
-    target_compile_options(CPP-HW PRIVATE /EHsc /W4 /WX)
-
-endif()
+# Next examples are disabled as they require manual work for a successful build:
+# add_subdirectory(4_lib_install)
+# add_subdirectory(5_lib_module)
+# add_subdirectory(6_option)
+# add_subdirectory(7_compile_features)
