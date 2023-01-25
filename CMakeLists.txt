@@ -11,4 +11,9 @@ add_executable(
 	guess_the_number.cpp
 	)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+
+set_property(TARGET guess_the_number PROPERTY
+    MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
