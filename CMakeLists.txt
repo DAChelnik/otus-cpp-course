@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.5)
+# Основной CMake, который содержит подключение всех подкаталогов
+
+cmake_minimum_required(VERSION 3.17)
 
 project(
     03.homework
@@ -6,16 +8,5 @@ project(
     DESCRIPTION "Игра Угадай число"
 	)
 
-add_executable(
-	guess_the_number
-	guess_the_number.cpp
-    random_value.h
-    random_value.cpp
-	)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
-
-set_property(TARGET guess_the_number PROPERTY
-    MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
-
+add_subdirectory (core)         # смотрим в директорию "core" для обработки CMake
+add_subdirectory (libraries)    # смотрим в директорию "libraries" для обработки CMake
