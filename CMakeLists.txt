@@ -9,6 +9,8 @@ project(
 add_executable(
 	guess_the_number
 	guess_the_number.cpp
+    random_value.h
+    random_value.cpp
 	)
 
 set(CMAKE_CXX_STANDARD 17)

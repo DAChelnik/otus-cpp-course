@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <cstdlib>
-#include <ctime>
+
+
+#include "random_value.h"
 
 bool  write_to_file(std::string user_name, int attempts_count, std::ofstream &);
 bool read_from_file(std::ifstream &);
@@ -20,11 +21,7 @@ int main()
 	std::cin >> user_name;
 
 	int attempts_count = 1;
-
-	const int max_value = 100;
-	std::srand(std::time(nullptr)); // use current time as seed for random generator
-	const int random_value = std::rand() % 100;
-
+	int random_value = get::RandomValue();
 	int current_value = 0;
 	bool not_win = true;
 
