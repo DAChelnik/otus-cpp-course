@@ -4,7 +4,6 @@
 
 
 #include "random_value.h"
-#include "ask_about_name.h"
 #include "read_write_file.h"
 
 int main() 
