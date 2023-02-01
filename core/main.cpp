@@ -4,9 +4,8 @@
 
 
 #include "random_value.h"
-
-bool  write_to_file(std::string user_name, int attempts_count, std::ofstream &);
-bool read_from_file(std::ifstream &);
+#include "ask_about_name.h"
+#include "read_write_file.h"
 
 int main() 
 {
@@ -49,49 +48,10 @@ int main()
 	} while(true);
 
 	// Write new high score to the records table
-	{
-		// We should open the output file in the append mode - we don't want
-		// to erase previous results.
-		std::ofstream out_file{high_scores_filename, std::ios_base::app};
-		if (!out_file.is_open()) {
-			std::cout << "Failed to open file for write: " << high_scores_filename << "!" << std::endl;
-			return -1;
-		}
-
-		// Append new results to the table:
-		out_file << user_name << ' ';
-		out_file << attempts_count;
-		out_file << std::endl;
-	} // end of score here just to mark end of the logic block of code
+	read_write_file::write_to_file(user_name, attempts_count);
 
 	// Read the high score file and print all results
-	{
-		std::ifstream in_file{high_scores_filename};
-		if (!in_file.is_open()) {
-			std::cout << "Failed to open file for read: " << high_scores_filename << "!" << std::endl;
-			return -1;
-		}
-
-		std::cout << "High scores table:" << std::endl;
-
-		std::string username;
-		int high_score = 0;
-		while (true) {
-			// Read the username first
-			in_file >> username;
-			// Read the high score next
-			in_file >> high_score;
-			// Ignore the end of line symbol
-			in_file.ignore();
-
-			if (in_file.fail()) {
-				break;
-			}
-
-			// Print the information to the screen
-			std::cout << username << '\t' << high_score << std::endl;
-		}
-	}
+	read_write_file::read_from_file();
 
 	std::cout << std::endl;
 	system("pause");
@@ -99,18 +59,3 @@ int main()
 	return 0;
 }
 
-/*	Write new high score to the records table
-*/
-bool write_to_file(std::string user_name, int attempts_count, std::ofstream &file)
-{
-	
-	return true;
-}
-
-/*	Read the high score file and print all results
- */
-bool read_from_file(std::ifstream &file)
-{
-
-	return true;
-}

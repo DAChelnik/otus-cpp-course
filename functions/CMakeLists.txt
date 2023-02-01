@@ -4,11 +4,11 @@ project(MyFunctions)
  
 set(HEADER_FILES 
     random_value.h
-    ask_about_name.h)
+    read_write_file.h)
 
 set(SOURCE_FILES 
     random_value.cpp
-    ask_about_name.cpp)
+    read_write_file.cpp)
  
 add_library(
     MyFunctions
