@@ -9,4 +9,4 @@ project(
 	)
 
 add_subdirectory (core)         # смотрим в директорию "core" для обработки CMake
-add_subdirectory (libraries)    # смотрим в директорию "libraries" для обработки CMake
+add_subdirectory (functions)    # смотрим в директорию "functions" для обработки CMake

@@ -6,9 +6,9 @@ set(SOURCE_FILES "main.cpp")
  
 add_executable (guess_the_number ${SOURCE_FILES})
  
-include_directories("../libraries")
+include_directories("../functions")
 
-target_link_libraries(guess_the_number MyLibraries)
+target_link_libraries(guess_the_number MyFunctions)
 
 set_target_properties(guess_the_number PROPERTIES
     CXX_STANDARD 17
