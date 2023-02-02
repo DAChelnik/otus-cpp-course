@@ -13,7 +13,7 @@ int main()
 	int attempts_count = 1;
 	int random_value = get::RandomValue();
 	int current_value = 0;
-	bool not_win = true;
+	// bool not_win = true;
 
 	// Ask about name
 	std::cout << "Welcome to the game: GUESS THE NUMBER" << std::endl;
