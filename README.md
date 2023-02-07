@@ -1,10 +1,40 @@
-# Hello, everyone #
-My name is Denis. I am Denis Chelnik.<br />
-I am currently studying a course "C++ Developer. Basic" in OTUS online school. <br /><br />
-Здравствуйте, меня зовут Денис.<br />
-Изучаю курс [C++ Developer. Basic](https://otus.ru/lessons/cpp-basic/) в школе [OTUS](https://otus.ru/ "OTUS онлайн-образование").
-Осваиваю базовые навыки IT, необходимые C++ разработчику для успешного старта ...
+# OTUS C++ Basic курс
 
-## Контактная информация ##
-Телефон для связи: +7 910 741-41-20<br />
-E-mail: denis@chelnik.ru
+## Задание "Инженерный калькулятор"
+
+В данном репозитории реализован лексер и парсер для построения калькулятора арифметических выражений
+
+## Инструкция по сборке
+
+Требуется компиялтор с поддержкой C++17
+
+Для сборки проекта необходимы выполнить следующие команды
+```
+mkdir build && cd build
+cmake ..
+cmake --build .
+```
+
+Примеры работы:
+```bash
+$echo "3 + 12 * 4" | ./calc
+	3
++
+		12
+	*
+		4
+$echo "a*a + 2*a*b + b*b" | ./calc
+			a
+	*
+		a
++
+			2
+		*
+			a
+	*
+		b
++
+		b
+	*
+		b
+```
