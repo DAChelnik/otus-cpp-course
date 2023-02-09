@@ -1,5 +1,9 @@
 #include "parser.hpp"
 #include "number.hpp"
+#include "add.hpp"
+#include "sub.hpp"
+#include "mul.hpp"
+#include "div.hpp"
 
 using Token = Lexer::Token;
 
@@ -16,19 +20,16 @@ ASTNode *Parser::expr() {
             std::string op = lexer_.get_operator();
             switch (op.front()) {
             case '+':
-                // Implement Add class and uncomment this line
-                // root = new Add(root, term());
-                return nullptr;
-                break;
+                return new Add(root, term());
             case '-':
-                // Implement Sub class and uncomment this line
-                //root = new Sub(root, term());
-                return nullptr;
-                break;
+                return new Sub(root, term());
+            case '*':
+                return new Mul(root, term());
+            case '/':
+                return new Div(root, term());
             default:
                 return root;
             }
-            break;
         }
         default:
             return root;
@@ -44,16 +45,14 @@ ASTNode *Parser::term() {
         case Token::Operator: {
             std::string op = lexer_.get_operator();
             switch (op.front()) {
+            case '+':
+                return new Add(root, term());
+            case '-':
+                return new Sub(root, term());
             case '*':
-                // Implement Mul class and uncomment this line
-                // root = new Mul(root, prim());
-                return nullptr;
-                break;
+                return new Mul(root, term());
             case '/':
-                // Implement Div class and uncomment this line
-                //root = new Div(root, prim());
-                return nullptr;
-                break;
+                return new Div(root, term());
             default:
                 return root;
             }
