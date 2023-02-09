@@ -4,6 +4,7 @@
 #include "sub.hpp"
 #include "mul.hpp"
 #include "div.hpp"
+#include "var.hpp"
 
 using Token = Lexer::Token;
 
@@ -73,9 +74,7 @@ ASTNode *Parser::prim() {
         node = new Number(lexer_.get_number());
         break;
     case Token::Name:
-        // Implement Variable class and uncomment this line
-        // node = new Variable(lexer_.get_name());
-        return nullptr;
+        node = new Variable(lexer_.get_name());
         break;
     default:
         break;

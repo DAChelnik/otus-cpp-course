@@ -8,20 +8,16 @@
 #include "parser.hpp"
 
 int main() {
-    // TODO
-    // Implement the next classes:
-    // Variable
-
-    // Without implementation that classes this application works only with numbers
 
     Lexer lexer(std::cin);
     Parser parser(lexer);
 
-   ASTNode *ast = parser.parse();
+    ASTNode *ast = parser.parse();
     
     if (ast) {
          ast->print(std::cout);
     }
 
+    system("pause");
     return 0;
 }

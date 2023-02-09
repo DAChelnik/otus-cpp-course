@@ -21,8 +21,6 @@ public:
     void print(std::ostream& out) const;
 
 private:
-    void inner_print(std::ostream& out, size_t indent) const;
-
     std::string repr_;
     ASTNode* lhs_{};
     ASTNode* rhs_{};
